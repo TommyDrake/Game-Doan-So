@@ -1,0 +1,55 @@
+* {
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+}
+
+.border1 {
+    background-color: pink;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    border: 2px red solid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.border2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    background-color: blue;
+    border: 7px darkblue double;
+    width: 50%;
+    height: 50%;
+    padding: 10px;
+    box-shadow: 5px 10px #888888;
+}
+
+.border3 {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 70%;
+    height: 70%;
+    background-color: brown;
+}
+
+#inputNum {
+    border-radius: 20px;
+}
+
+#btResetGame {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    cursor: pointer;
+    border-radius: 20px;
+    width: 80px;
+}
+
+#btResetGame:hover {
+    background-color: black;
+    color: white;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel = "stylesheet" href = "style.css">  
+        <title>Game Doan So</title>
+    </head>
+    <body>
+        <div class = "border1">
+            <div class = "border2">
+                <div class = "border3">
+        <h1> Game Doan So </h1>
+        <div class = "button">
+        <button id="btResetGame"> Reset Game </button>
+        </div>
+        <input type="text" placeholder="Hay doan mot so" id="inputNum"/>
+        <p id="lbResult"> Ket Qua: </p>
+                </div>
+            </div>   
+        <script>
+        let btResetGame = document.getElementById("btResetGame");
+        let inputNum = document.getElementById("inputNum");
+        let lbResult = document.getElementById("lbResult");
+        let guessNum = 0;
+        let randomNumber = 0;
+        let attempt = 5;
+
+        function newGame() {
+            randomNumber = Math.floor(Math.random() * 101);
+            attempt = 5;
+            console.log("New Game created");
+        }
+
+
+        newGame()
+        btResetGame.onclick = newGame;
+
+        inputNum.onkeypress = (key) => {
+            if (attempt == 0) {
+                return;
+            }
+
+            if (key.code == "Enter") {
+                guessNum = parseInt(inputNum.value);
+                console.log("Submit input number");
+                inputNum.value = "";
+
+                if (guessNum == randomNumber) {
+                lbResult.innerText = "You are correct !" + randomNumber;
+                lbResult.innerText = "So luot du cua ban la:" + (attempt - 1);
+
+                } else if (guessNum > randomNumber) {
+                    lbResult.innerText = "Too High";
+                } else {
+                    lbResult.innerText = "Too Low";
+                }
+                attempt--;
+                if (attempt == 0) {
+                    console.log("Game Over");
+                }
+            }           
+        };
+    </script>
+    </div>
+    </body>
+</html>
